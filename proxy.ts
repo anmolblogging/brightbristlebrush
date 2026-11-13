@@ -4,11 +4,11 @@ import type { NextRequest } from "next/server";
 // Visitors from these countries see the "not available" page instead of the site.
 const BLOCKED_COUNTRIES = new Set(["IN"]);
 
-// Private access: opening any page with ?access=<SITE_ACCESS_KEY> stores a cookie
-// that lets that browser see the site from a blocked country.
+// Private access: opening any page with ?access=<SITE_ACCESS_KEY> stores a session
+// cookie (no expiry date), so the site stays viewable from a blocked country only
+// until the browser is closed. After that the access link must be opened again.
 const ACCESS_PARAM = "access";
 const ACCESS_COOKIE = "bb_access";
-const ONE_YEAR = 60 * 60 * 24 * 365;
 
 export function proxy(request: NextRequest) {
   const key = process.env.SITE_ACCESS_KEY;
@@ -21,7 +21,6 @@ export function proxy(request: NextRequest) {
     const response = NextResponse.redirect(clean);
     if (key && offered === key) {
       response.cookies.set(ACCESS_COOKIE, key, {
-        maxAge: ONE_YEAR,
         httpOnly: true,
         secure: true,
         sameSite: "lax",
