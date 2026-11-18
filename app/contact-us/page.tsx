@@ -44,9 +44,8 @@ export default function ContactPage() {
                 <h3 className="flex items-center gap-2 font-mono text-xs font-bold tracking-[0.1em] text-brand uppercase"><MapPin size={15} />{l.title}</h3>
                 <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{l.address}</p>
                 {l.phone && (
-                  <p className="mt-3 flex flex-wrap gap-x-5 gap-y-1 text-sm font-medium">
+                  <p className="mt-3 text-sm font-medium">
                     <a href={telHref(l.phone)} className="hover:text-brand">{l.phone}</a>
-                    <a href={`mailto:${l.email}`} className="break-all hover:text-brand">{l.email}</a>
                   </p>
                 )}
               </StaggerItem>

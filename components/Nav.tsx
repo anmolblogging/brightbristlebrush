@@ -8,6 +8,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { ChevronDown, Menu, X } from "lucide-react";
 import { COMPANY, NAV_LINKS, PRODUCTS, productHref } from "@/lib/site";
 import { Flags } from "./Flags";
+import { LinkedInLink } from "./LinkedInLink";
 
 export function Nav() {
   const pathname = usePathname();
@@ -25,9 +26,12 @@ export function Nav() {
       className="fixed inset-x-0 top-0 z-50 bg-black text-white"
     >
       <div className="mx-auto grid max-w-7xl grid-cols-[1fr_auto] items-center gap-4 px-5 py-3 md:grid-cols-[1fr_auto_1fr] md:px-6">
-        <Link href="/" onClick={() => setOpen(false)} aria-label={`${COMPANY} home`}>
-          <Image src="/images/logo-white.png" alt="" width={768} height={224} priority className="h-14 w-auto md:h-16" />
-        </Link>
+        <div className="flex items-center gap-3 md:gap-4">
+          <Link href="/" onClick={() => setOpen(false)} aria-label={`${COMPANY} home`}>
+            <Image src="/images/logo-white.png" alt="" width={768} height={224} priority className="h-14 w-auto md:h-16" />
+          </Link>
+          <LinkedInLink size={20} className="flex h-9 w-9 shrink-0 items-center justify-center border border-white/25 text-white/80 hover:border-saffron hover:text-saffron" />
+        </div>
 
         <nav className="hidden items-center justify-center gap-0.5 md:flex">
           {NAV_LINKS.map(({ label, href }) => {

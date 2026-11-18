@@ -1,21 +1,21 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { Mail, MapPin, Phone } from "lucide-react";
+import { MapPin, Phone } from "lucide-react";
 import { AnimatedHeading } from "@/components/AnimatedHeading";
 import { Eyebrow } from "@/components/Eyebrow";
 import { Stagger, StaggerItem } from "@/components/Motion";
 import { PageHero } from "@/components/PageHero";
 import { Reveal } from "@/components/Reveal";
 import { SectionHead } from "@/components/SectionHead";
-import { EMAIL, LOCATIONS, PHONES, telHref } from "@/lib/site";
+import { LOCATIONS, PHONES, telHref } from "@/lib/site";
 
 export const metadata: Metadata = { title: "About Us" };
 
 const HERITAGE = [
-  { year: "1935", body: "Great Grandfather Sarjoo Prasad establishes Shri Sitaram Trading Company in Barhaj, Uttar Pradesh, trading natural pig bristles for international export through agents and brokers, including Begbie, Phillips & Hayley, Limited." },
+  { year: "1932", body: "Great Grandfather Sarjoo Prasad establishes Shri Sitaram Trading Company in Barhaj, Uttar Pradesh, trading natural pig bristles for international export through agents and brokers, including Begbie, Phillips & Hayley, Limited." },
   { year: "1970s", body: "Export activities continue into the 1970s, building a family tradition in the knowledge, craftsmanship and processing of natural bristles." },
   { year: "2018", body: "In 2018, we established Bright Brush and Bristle Works India as a dedicated manufacturing and export establishment, carrying forward this legacy into modern international markets." },
-  { year: "Today", body: "Nearly nine decades after the beginning of our family\u2019s involvement in the industry, we continue operating from Barhaj, preserving the traditional craftsmanship that defines our identity." },
+  { year: "Today", body: "More than nine decades after the beginning of our family\u2019s involvement in the industry, we continue operating from Barhaj, preserving the traditional craftsmanship that defines our identity." },
 ];
 
 const CAPACITY = [
@@ -28,6 +28,18 @@ const JOURNEY = [
   { year: "2018", body: "Our modern international export journey began in 2018 with shipments to Thailand." },
   { year: "2019", body: "We entered the European Union market through Germany, marking an important milestone in our international expansion." },
   { year: "Today", body: "Our export markets span Europe, Asia and the United Kingdom." },
+];
+
+const PEOPLE: { src: string; alt: string; caption?: [string, string][] }[] = [
+  { src: "/images/founder-1.jpg", alt: "Armaan Pratap, Owner & Director, Bright Brush & Bristle Works India" },
+  {
+    src: "/images/founder-2.jpg",
+    alt: "Senior Advisor at Bright Brush & Bristle Works India, at the Shree Sitaram TVS dealership",
+    caption: [
+      ["Senior Advisor", "Bright Brush & Bristle Works India"],
+      ["Owner", "Shree Sitaram Trading Co. & Shree Sitaram Automobiles (TVS Dealership)"],
+    ],
+  },
 ];
 
 const MARKETS = ["Germany", "Italy", "Austria", "France", "Switzerland", "Spain", "South Korea", "United Kingdom"];
@@ -51,9 +63,9 @@ export default function AboutPage() {
         <div className="mx-auto grid max-w-7xl gap-10 px-5 md:px-6 lg:grid-cols-[1fr_1.1fr] lg:gap-14">
           <Reveal className="lg:sticky lg:top-28 lg:self-start">
             <Eyebrow className="mb-5">Our Heritage</Eyebrow>
-            <AnimatedHeading lines={["A Legacy", "Since 1935"]} />
+            <AnimatedHeading lines={["A Legacy", "Since 1932"]} />
             <div className="mt-6 space-y-4 leading-relaxed text-muted-foreground md:text-[17px]">
-              <p>The story of Bright Brush and Bristle Works India begins in 1935, when our Great Grandfather Sarjoo Prasad established Shri Sitaram Trading Company in the historic town of Barhaj, Uttar Pradesh, India.</p>
+              <p>The story of Bright Brush and Bristle Works India begins in 1932, when our Great Grandfather Sarjoo Prasad established Shri Sitaram Trading Company in the historic town of Barhaj, Uttar Pradesh, India.</p>
               <p>During the British era, the company was involved in the natural pig bristle trade, supplying materials for international export through established agents and brokers. These commercial activities continued into the 1970s, establishing a family tradition rooted in the knowledge, craftsmanship, and processing of natural bristles.</p>
               <p>Although the earlier export operations eventually ceased, the expertise and traditional hand-processing methods remained part of our family&rsquo;s heritage.</p>
             </div>
@@ -193,24 +205,33 @@ export default function AboutPage() {
         <div className="mx-auto max-w-7xl px-5 md:px-6">
           <SectionHead label="Our Vision" lines={["A Message from the", "Owner & Director"]} />
           <div className="mt-10 grid gap-10 lg:grid-cols-[420px_1fr] lg:gap-14">
-            <Stagger className="grid grid-cols-2 gap-4 lg:self-start">
-              {["/images/founder-1.jpg", "/images/founder-2.jpg"].map((src) => (
-                <StaggerItem key={src} className="relative aspect-[3/4] overflow-hidden border shadow-lg">
-                  <Image src={src} alt="Owner & Director, Bright Brush and Bristle Works India" fill sizes="(min-width: 1024px) 210px, 50vw" className="object-cover object-top" />
+            <Stagger className="grid grid-cols-2 items-start gap-4 lg:self-start">
+              {PEOPLE.map((person) => (
+                <StaggerItem key={person.src}>
+                  <div className="relative aspect-[3/4] overflow-hidden border shadow-lg">
+                    <Image src={person.src} alt={person.alt} fill sizes="(min-width: 1024px) 210px, 50vw" className="object-cover object-top" />
+                  </div>
+                  {person.caption && (
+                    <div className="mt-3 space-y-2 text-xs leading-snug text-muted-foreground md:text-[13px]">
+                      {person.caption.map((line) => <p key={line[0]}><span className="font-semibold text-foreground">{line[0]}</span><br />{line[1]}</p>)}
+                    </div>
+                  )}
                 </StaggerItem>
               ))}
             </Stagger>
             <Reveal direction="left">
               <blockquote className="relative border-l-4 border-saffron pl-6 md:pl-8">
                 <span aria-hidden className="absolute -top-6 left-4 text-7xl leading-none text-bronze/25">&ldquo;</span>
-                <div className="space-y-4 text-lg leading-relaxed md:text-xl">
-                  <p>My vision is to establish Bright Brush and Bristle Works India as a globally respected name in the natural bristle industry, strengthening our presence and reaching brush manufacturers throughout the European Union and the United Kingdom.</p>
-                  <p>I believe that lasting success is built not merely on supplying products, but on earning the trust and confidence of every customer we serve. Through uncompromising quality, dependable service, and long-term partnerships, we aspire to make Indian natural boar bristles a benchmark for excellence in international markets.</p>
-                  <p>Guided by our family&rsquo;s heritage dating back to 1935, my ambition is to carry generations of traditional craftsmanship into the future, strengthening India&rsquo;s position in the global bristle industry while remaining true to the values upon which our business was founded.</p>
+                <div className="space-y-4 text-lg leading-relaxed">
+                  <p>My vision is to make Bright Brush &amp; Bristle Works India a trusted supplier of Indian natural boar bristles to brush manufacturers in the EU, UK and beyond.</p>
+                  <p>We aim to set a high standard for Indian bristles by meeting each buyer&rsquo;s specifications and delivering consistent quality.</p>
+                  <p>We keep buyers informed throughout the order and confirm shipment details with the importer before dispatch. We prepare export documents in advance, EHC where required.</p>
+                  <p>If a shipment is held or paperwork is queried, we identify what is holding up clearance and supply any information needed from our side. We coordinate with the importer, courier and customs broker to help resolve the issue. When needed, we speak directly with customs and veterinary authorities in the importing country. We keep the buyer updated until the issue is resolved and the goods are delivered.</p>
+                  <p>Our family&rsquo;s bristle-trade heritage dates back to 1932. My goal is to carry that craftsmanship forward and earn long-term customer relationships through quality and dependable service.</p>
                 </div>
                 <footer className="mt-6">
-                  <p className="text-lg font-semibold">Armaan Pratap and Pratap Bahadur Sitaram</p>
-                  <p className="text-sm text-muted-foreground">Owner &amp; Director, Bright Brush and Bristle Works India</p>
+                  <p className="text-lg font-semibold">Armaan Pratap</p>
+                  <p className="text-sm text-muted-foreground">Owner &amp; Director, Bright Brush &amp; Bristle Works India</p>
                 </footer>
               </blockquote>
             </Reveal>
@@ -227,7 +248,7 @@ export default function AboutPage() {
             <div aria-hidden className="mx-auto mt-8 h-0.5 w-16 bg-saffron" />
             <p className="mt-8 text-lg font-semibold">Bright Brush and Bristle Works India</p>
             <p className="mt-1 text-2xl text-bronze italic md:text-3xl">The Gold Standard of Indian Bristles.</p>
-            <p className="mt-3 text-muted-foreground">Preserving a tradition since 1935. Serving international markets through our modern export establishment since 2018.</p>
+            <p className="mt-3 text-muted-foreground">Preserving a tradition since 1932. Serving international markets through our modern export establishment since 2018.</p>
           </Reveal>
         </div>
       </section>
@@ -256,7 +277,6 @@ export default function AboutPage() {
               <ul className="mt-6 flex flex-col gap-5 text-white/85 md:flex-row md:gap-16">
                 <li className="flex max-w-sm gap-3"><MapPin size={18} className="mt-0.5 shrink-0" />{LOCATIONS[2].address}</li>
                 <li className="flex gap-3"><Phone size={18} className="mt-0.5 shrink-0" /><span className="flex flex-col gap-1">{PHONES.slice(0, 2).map((p) => <a key={p} href={telHref(p)} className="hover:text-white">{p}</a>)}</span></li>
-                <li className="flex gap-3"><Mail size={18} className="mt-0.5 shrink-0" /><a href={`mailto:${EMAIL}`} className="break-all hover:text-white">{EMAIL}</a></li>
               </ul>
             </div>
           </Reveal>

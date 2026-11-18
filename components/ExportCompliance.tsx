@@ -7,7 +7,7 @@ import { Reveal } from "./Reveal";
 import { SectionHead } from "./SectionHead";
 
 const AUTHORITIES = [
-  { src: "/images/compliance/defra-mark.png", name: "DEFRA" },
+  { src: "/images/compliance/traces-nt.png", name: "Listing in TRACES NT" },
   { src: "/images/compliance/apha.png", name: "Animal & Plant Health Agency" },
   { src: "/images/compliance/european-commission.png", name: "European Commission" },
   { src: "/images/compliance/defra.png", name: "Department for Environment, Food & Rural Affairs" },

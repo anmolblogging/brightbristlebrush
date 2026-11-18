@@ -21,8 +21,8 @@ const STRIP_LOGOS = [
 import { BANK, FACTORY_PREMISES, FEATURES, HIGHLIGHTS, TRANSPORT } from "@/lib/site";
 
 const DHL_ROUTES = [
-  { title: "European Union", body: "Our shipments are generally cleared at Leipzig, Germany, which serves as a major point of entry into the EU, before being forwarded to their final destinations. Alternatively, shipments may be cleared directly at the destination country\u2019s port of entry. All customs clearance procedures are handled by DHL, and shipments are delivered under DAP (Delivered at Place) terms." },
-  { title: "United Kingdom", body: "Our shipments are primarily cleared through East Midlands Airport and London Stansted Airport, with customs clearance and onward delivery managed by DHL." },
+  { title: "European Union", body: "Our shipments are generally cleared at BCP Germany Port, which serves as a major point of entry into the EU, before being forwarded to their final destinations. Alternatively, shipments may be cleared directly at the destination country\u2019s port of entry. All customs clearance procedures are handled by DHL, and shipments are delivered under DAP (Delivered at Place) terms." },
+  { title: "United Kingdom", body: "Our treated boar bristle shipments to the United Kingdom undergo veterinary clearance at airport Border Control Posts designated to handle this category of animal by-products." },
 ];
 
 const WELCOME_POINTS = [
@@ -85,12 +85,7 @@ export default function Home() {
         <div className="mx-auto grid max-w-7xl gap-12 px-5 md:px-6 lg:grid-cols-[520px_1fr] lg:gap-16">
           <Reveal className="lg:sticky lg:top-28 lg:self-start">
             <div className="relative mx-auto max-w-xl lg:mx-0">
-              <div aria-hidden className="absolute -top-4 -left-4 hidden h-24 w-24 border border-bronze/30 md:block" />
               <Image src="/images/welcome-range.jpg" alt="Bright Brush and Bristle Works India bristle range, an EU and UK approved establishment since 2019" width={1356} height={1159} sizes="(min-width: 1024px) 520px, 100vw" className="h-auto w-full border shadow-xl" />
-              <div className="absolute -bottom-6 left-6 bg-brand px-7 py-5 text-white shadow-2xl md:left-10">
-                <div className="text-4xl leading-none font-bold md:text-5xl"><CountUp to={2018} /></div>
-                <div className="mt-2 font-mono text-[10px] font-semibold tracking-[0.14em] text-white/70 uppercase">Established</div>
-              </div>
             </div>
           </Reveal>
           <Reveal direction="left" className="lg:py-2">
@@ -107,7 +102,7 @@ export default function Home() {
             <h3 className="mt-8 text-xl font-semibold tracking-[-0.01em] md:text-2xl">EU &amp; UK Approved Animal By-Product Establishment Since 2019</h3>
             <div className="mt-4 space-y-4 leading-relaxed text-muted-foreground md:text-[17px]">
               <p>We are an ISO 9001:2015-certified manufacturer with an EU and UK approved Animal By-Product (ABP) establishment. Our processing procedures and export documentation support the international supply of treated natural pig bristles to European and British brush manufacturers.</p>
-              <p>Our manufacturing heritage dates back to 1935, through our sister concern, Shri Sitaram Trading Company, reflecting generations of experience in India&rsquo;s traditional pig bristle industry.</p>
+              <p>Our manufacturing heritage dates back to 1932, through our sister concern, Shri Sitaram Trading Company, reflecting generations of experience in India&rsquo;s traditional pig bristle industry.</p>
               <p>Whether you require premium natural boar bristles for luxury grooming products or natural pig hair for brush manufacturing, we offer consistent quality, dependable bulk supply, and professional international export services.</p>
             </div>
             <p className="mt-6 border-l-4 border-saffron bg-bronze/10 px-5 py-4 text-lg leading-relaxed font-semibold text-brand md:text-xl">Bright Brush &amp; Bristle Works India — The Gold Standard of Indian Bristles.</p>
@@ -204,7 +199,7 @@ export default function Home() {
                 <Image src="/images/dhl-delivery.jpg" alt="DHL aircraft, truck and van used for our EU and UK shipments" width={588} height={330} sizes="(min-width: 1024px) 40vw, 100vw" className="h-auto w-full shadow-2xl" />
                 <div className="mt-4 flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1 bg-brand px-5 py-3.5 text-white">
                   <span className="font-mono text-[11px] font-bold tracking-[0.14em] text-[#ffcc00] uppercase">DHL Account Number</span>
-                  <span className="text-xl font-semibold tracking-wide">531297214</span>
+                  <span className="text-xl font-semibold tracking-wide">531****</span>
                 </div>
                 <p className="mt-4 text-sm leading-relaxed text-brand/80">This established logistics arrangement enables us to provide efficient, reliable, and streamlined shipping services to our European and UK customers. Our established partnership with DHL allows us to provide customers with a streamlined, dependable, and efficient international shipping experience.</p>
                 <div className="mt-5"><MagneticLink href="/products/" className="bg-brand text-white">Products</MagneticLink></div>

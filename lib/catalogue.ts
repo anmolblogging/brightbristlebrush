@@ -170,10 +170,10 @@ export const EU_VERIFY_STEPS = [
   "Select India under Country, if it is not already selected.",
   "Open the relevant Animal By-Products / Processing Plants establishment listing.",
   "Locate Bright Brush & Bristle Works India in the establishment list.",
-  "Confirm approval number: NR/PAC/ABP-FSB/1920/239.",
+  "Confirm approval number: ABP Category 3 No. 239.",
 ];
 
 export const EU_APPROVAL = {
-  number: "NR/PAC/ABP-FSB/1920/239",
+  number: "ABP Category 3 No. 239",
   url: "https://webgate.ec.europa.eu/tracesnt/directory/listing/establishment/publication/index#!/view/IN/PROCESSING_PLANTS",
 };

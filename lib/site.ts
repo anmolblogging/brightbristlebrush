@@ -13,6 +13,8 @@ export const NAV_LINKS = [
 ];
 
 export const EMAIL = "sales@brightbristlebrush.com";
+// Company LinkedIn page, linked from the header and footer. Leave empty to hide the icon.
+export const LINKEDIN_URL = "https://in.linkedin.com/company/bright-brush-and-bristle-works-india";
 export const PHONES = ["+91-5561354044", "+91-9565914040", "+91-8858256451", "+91-8756796451"];
 export const HOURS = ["Mon-Sat: 9:00 - 19:00", "Closed on Sunday"];
 
@@ -114,9 +116,9 @@ export const SERVICES = [
 
 export const LOCATIONS = [
   { title: "1st Manufacturing Unit", address: "Main Road Barhaj, Azad Nagar, North Post Barhaj, District Deoria, Uttar Pradesh, 274601." },
-  { title: "2nd Manufacturing Unit", address: "Bright Brush And Bristle Works India, Main Road Gaura, Next to HP Gas, Barhaj Deoria Uttar Pradesh, 274601.", phone: "+91-6387-519951", email: EMAIL },
-  { title: "Office Address Mumbai", address: "Bright Brush And Bristle Works India, Office No. 1401, 14th Floor, Valentina, VFVA Lodha, Majiwada Thane West 400602.", phone: "+91-6387-519951", email: EMAIL },
-  { title: "Mumbai Sales & Distribution Godown", address: "Bright Brush And Bristle Works India, Shop No 1 & 2 Sai Darshan Building, Ground Floor, Purna Road, Purna Bhiwandi. 421302.", phone: "+91-9565914040", email: "armaan@brightbristlebrush.com" },
+  { title: "2nd Manufacturing Unit", address: "Bright Brush And Bristle Works India, Main Road Gaura, Next to HP Gas, Barhaj Deoria Uttar Pradesh, 274601.", phone: "+91-6387-519951" },
+  { title: "Office Address Mumbai", address: "Bright Brush And Bristle Works India, Office No. 1401, 14th Floor, Valentina, VFVA Lodha, Majiwada Thane West 400602.", phone: "+91-6387-519951" },
+  { title: "Mumbai Sales & Distribution Godown", address: "Bright Brush And Bristle Works India, Shop No 1 & 2 Sai Darshan Building, Ground Floor, Purna Road, Purna Bhiwandi. 421302.", phone: "+91-9565914040" },
 ];
 
 export const CERTIFICATES: { title: string; src: string; pages?: string[]; pdf?: string }[] = [
@@ -129,5 +131,10 @@ export const CERTIFICATES: { title: string; src: string; pages?: string[]; pdf?:
   { title: "ISO Certificate", src: "/images/iso.jpg" },
   { title: "IEC Certificate", src: "/images/ice.jpg" },
   { title: "GST Certificate", src: "/images/gst.jpg" },
-  { title: "Trademark Certificate", src: "/images/trademark.jpg" },
+  {
+    title: "Trademark Certificate",
+    src: "/images/trademark-1.jpg",
+    pages: ["/images/trademark-1.jpg", "/images/trademark-2.jpg"],
+    pdf: "/docs/trademark-certificate.pdf",
+  },
 ];

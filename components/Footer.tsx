@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Mail, MapPin, Phone } from "lucide-react";
+import { LinkedInLink } from "./LinkedInLink";
 import { COMPANY, EMAIL, LOCATIONS, NAV_LINKS, PHONES, PRODUCTS, productHref, telHref } from "@/lib/site";
 
 const heading = "font-mono text-[11px] font-bold tracking-[0.14em] text-white/90 uppercase";
@@ -37,6 +38,7 @@ export function Footer() {
             <ul className="mt-5 space-y-3.5 text-sm text-white/60">
               <li className="flex items-center gap-3"><Phone size={15} className="shrink-0 text-white/40" /><a href={telHref(PHONES[0])} className="hover:text-white">{PHONES[0]}</a></li>
               <li className="flex items-center gap-3"><Mail size={15} className="shrink-0 text-white/40" /><a href={`mailto:${EMAIL}`} className="break-all hover:text-white">{EMAIL}</a></li>
+              <li><LinkedInLink size={15} label className="text-white/60 hover:text-white" /></li>
               <li className="flex items-start gap-3"><MapPin size={15} className="mt-0.5 shrink-0 text-white/40" /><span className="leading-relaxed">{LOCATIONS[0].address}</span></li>
             </ul>
           </div>
