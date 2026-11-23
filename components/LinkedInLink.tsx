@@ -16,7 +16,7 @@ export function LinkedInLink({ className = "", size = 18, label = false }: { cla
       href={LINKEDIN_URL}
       target="_blank"
       rel="noopener noreferrer"
-      aria-label="Bright Brush and Bristle Works India on LinkedIn"
+      aria-label="Armaan Pratap on LinkedIn"
       className={`inline-flex items-center gap-2 transition-colors ${className}`}
     >
       <LinkedInIcon size={size} />

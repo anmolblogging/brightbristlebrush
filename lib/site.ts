@@ -13,8 +13,8 @@ export const NAV_LINKS = [
 ];
 
 export const EMAIL = "sales@brightbristlebrush.com";
-// Company LinkedIn page, linked from the header and footer. Leave empty to hide the icon.
-export const LINKEDIN_URL = "https://in.linkedin.com/company/bright-brush-and-bristle-works-india";
+// Owner's LinkedIn profile, linked from the header and footer. Leave empty to hide the icon.
+export const LINKEDIN_URL = "https://www.linkedin.com/in/armaan-pratap-086b54188";
 export const PHONES = ["+91-5561354044", "+91-9565914040", "+91-8858256451", "+91-8756796451"];
 export const HOURS = ["Mon-Sat: 9:00 - 19:00", "Closed on Sunday"];
 

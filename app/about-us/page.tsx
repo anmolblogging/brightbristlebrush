@@ -30,11 +30,17 @@ const JOURNEY = [
   { year: "Today", body: "Our export markets span Europe, Asia and the United Kingdom." },
 ];
 
-const PEOPLE: { src: string; alt: string; caption?: [string, string][] }[] = [
-  { src: "/images/founder-1.jpg", alt: "Armaan Pratap, Owner & Director, Bright Brush & Bristle Works India" },
+const PEOPLE: { src: string; alt: string; name: string; caption: [string, string?][] }[] = [
+  {
+    src: "/images/founder-1.jpg",
+    alt: "Armaan Pratap, Owner & Director, Bright Brush & Bristle Works India",
+    name: "Armaan Pratap",
+    caption: [["Owner & Director"]],
+  },
   {
     src: "/images/founder-2.jpg",
-    alt: "Senior Advisor at Bright Brush & Bristle Works India, at the Shree Sitaram TVS dealership",
+    alt: "Pratap Bahadur Sitaram, Senior Advisor, at the Shree Sitaram TVS dealership",
+    name: "Pratap Bahadur Sitaram",
     caption: [
       ["Senior Advisor", "Bright Brush & Bristle Works India"],
       ["Owner", "Shree Sitaram Trading Co. & Shree Sitaram Automobiles (TVS Dealership)"],
@@ -211,11 +217,12 @@ export default function AboutPage() {
                   <div className="relative aspect-[3/4] overflow-hidden border shadow-lg">
                     <Image src={person.src} alt={person.alt} fill sizes="(min-width: 1024px) 210px, 50vw" className="object-cover object-top" />
                   </div>
-                  {person.caption && (
-                    <div className="mt-3 space-y-2 text-xs leading-snug text-muted-foreground md:text-[13px]">
-                      {person.caption.map((line) => <p key={line[0]}><span className="font-semibold text-foreground">{line[0]}</span><br />{line[1]}</p>)}
-                    </div>
-                  )}
+                  <div className="mt-3 space-y-2 text-xs leading-snug text-muted-foreground md:text-[13px]">
+                    <p className="text-sm font-semibold text-bronze md:text-base">{person.name}</p>
+                    {person.caption.map(([title, detail]) => (
+                      <p key={title}><span className="font-semibold text-foreground">{title}</span>{detail && <><br />{detail}</>}</p>
+                    ))}
+                  </div>
                 </StaggerItem>
               ))}
             </Stagger>
